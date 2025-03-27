@@ -10,13 +10,16 @@ const [events, setEvents] = useState([
   {title: "match: manchester united vs barcelona", id: 3}
 ])
 
-
   const handleClick = () => {
     setName('Asan')
-
   }
 
-
+  let handleDelete = (id)=>{
+   const filteredEvents = events.filter((event)=>{
+    return event.id !== id
+   })
+   setEvents(filteredEvents)
+  }
 
   return (
     <div className="App">
@@ -26,6 +29,7 @@ const [events, setEvents] = useState([
         return(
           <div key={event.id}>
             <h2>{event.title}</h2>
+            <button onClick={() => handleDelete(event.id)}>Delete</button>
           </div>
         )
       })}
