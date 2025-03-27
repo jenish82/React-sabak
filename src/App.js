@@ -4,6 +4,7 @@ import { useState } from 'react';
 function App() {
 
 const [name, setName] = useState('Jenish')
+
 const [events, setEvents] = useState([
   {title: "jenish's birthday party", id: 1},
   {title: "Asan's live stream", id: 2},
@@ -15,10 +16,13 @@ const [events, setEvents] = useState([
   }
 
   let handleDelete = (id)=>{
-   const filteredEvents = events.filter((event)=>{
-    return event.id !== id
-   })
-   setEvents(filteredEvents)
+    setEvents((prev)=>{
+      return prev.filter((event)=>{
+        return event.id !==id
+      })
+    })
+
+
   }
 
   return (
