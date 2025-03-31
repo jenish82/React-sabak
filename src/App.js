@@ -41,7 +41,7 @@ function App() {
       {!showContent && <button onClick={() => setShowContent(true)}> Show Conent</button>}
       {showContent && <EventList events={events} handleDelete={handleDelete}/>}
       {showModal && <Modal closeModal={closeModal}>
-        <h1>Janybaev Jenishbek Youtube Channel❤️</h1>
+        <h2>Janybaev Jenishbek Youtube Channel❤️</h2>
         <p>Lorem ipsum dolor, sit amet consectetur
           adipisicing elit. Voluptatum vero voluptate
           totam distinctio est expedita quo, sequi,

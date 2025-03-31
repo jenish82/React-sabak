@@ -1,3 +1,5 @@
+import './Title.css'
+
 const title = ({title, subtitle}) => {
   return (
     <div>
