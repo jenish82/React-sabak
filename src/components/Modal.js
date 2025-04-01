@@ -1,8 +1,12 @@
 import "./Modal.css"
-const Modal = ({children, closeModal}) => {
+const Modal = ({children, closeModal, isModeModal}) => {
   return (
     <div className="modal-backdrop">
-        <div className="modal">
+        <div className="modal" style={{
+          border:'4px solid',
+          borderColor: isModeModal ? "yellowgreen" : 'red',
+          textAlign: 'center'
+        }}>
             {children}
             <br />
             <button onClick={closeModal}>Close</button>
