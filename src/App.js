@@ -40,7 +40,7 @@ function App() {
       {showContent && <button onClick={() => setShowContent(false)}> Hide Conent</button>}
       {!showContent && <button onClick={() => setShowContent(true)}> Show Conent</button>}
       {showContent && <EventList events={events} handleDelete={handleDelete}/>}
-      {showModal && <Modal closeModal={closeModal}>
+      {showModal && <Modal closeModal={closeModal} isModeModal={false}>
         <h2>Janybaev Jenishbek Youtube Channel❤️</h2>
         <p>Lorem ipsum dolor, sit amet consectetur
           adipisicing elit. Voluptatum vero voluptate
