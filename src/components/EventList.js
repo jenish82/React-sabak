@@ -1,5 +1,5 @@
 
-import { Fragment } from "react"
+import style from './EventList.module.css'
 
 
 const EventList = ({ events, handleDelete }) => {
@@ -8,10 +8,10 @@ const EventList = ({ events, handleDelete }) => {
             {events.length === 0 && <h4>Not Conent Yer :(</h4>}
             {events.map((event) => {
                 return (
-                    <Fragment key={event.id}>
+                    <div className={style.card} key={event.id}>
                         <h2>{event.title}</h2>
                         <button onClick={() => handleDelete(event.id)}>Delete</button>
-                    </Fragment>
+                    </div>
                 )
             })}
 

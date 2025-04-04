@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Title from './components/Title'
 import Modal from './components/Modal';
 import EventList from './components/EventList';
+import NewEventForm from './components/NewEventForm';
 
 function App() {
   const [showModal, setSowModal] = useState(true)
@@ -41,22 +42,12 @@ function App() {
       {!showContent && <button onClick={() => setShowContent(true)}> Show Conent</button>}
       {showContent && <EventList events={events} handleDelete={handleDelete}/>}
       {showModal && <Modal closeModal={closeModal} isModeModal={false}>
-        <h2>Janybaev Jenishbek Youtube Channel❤️</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur
-          adipisicing elit. Voluptatum vero voluptate
-          totam distinctio est expedita quo, sequi,
-          accusamus nemo maxime, ea corrupti? Aliquid
-          eius maxime repellendus optio eum, maiores,
-          odio, vitae ea incidunt laborum fugiat enim
-          ipsum accusamus delectus aperiam assumenda
-          dolore dolores distinctio facilis? Asperiores
-          harum beatae perferendis ullam.</p>
-        <a href="">Subscripbe</a>
+        <NewEventForm/>
       </Modal>}
       <br />
       <br />
 
-      <button onClick={() => { setSowModal(true) }}>Show Modal</button>
+      <button onClick={() => { setSowModal(true) }}>Nev Event</button>
 
     </div>
   );
