@@ -6,15 +6,20 @@ import EventList from './components/EventList';
 import NewEventForm from './components/NewEventForm';
 
 function App() {
-  const [showModal, setSowModal] = useState(true)
+  const [showModal, setSowModal] = useState(false)
 
   const [name, setName] = useState('Jenish')
   const [showContent, setShowContent] = useState(true)
-  const [events, setEvents] = useState([
-    { title: "jenish's birthday party", id: 1 },
-    { title: "Asan's live stream", id: 2 },
-    { title: "match: manchester united vs barcelona", id: 3 }
-  ])
+  const [events, setEvents] = useState([])
+
+  const newEvent = (event)=>{
+    setEvents((prev) =>{
+      return [...prev, event]
+    })
+
+    setSowModal(false)
+
+  }
 
 
   const handleClick = () => {
@@ -29,10 +34,6 @@ function App() {
     })
   }
 
-  const closeModal = () => {
-    setSowModal(false)
-  }
-
   return (
     <div className="App">
       <Title title="Jenishs Kingdom events" subtitle="All events well be here :)" />
@@ -41,8 +42,8 @@ function App() {
       {showContent && <button onClick={() => setShowContent(false)}> Hide Conent</button>}
       {!showContent && <button onClick={() => setShowContent(true)}> Show Conent</button>}
       {showContent && <EventList events={events} handleDelete={handleDelete}/>}
-      {showModal && <Modal closeModal={closeModal} isModeModal={false}>
-        <NewEventForm/>
+      {showModal && <Modal>
+        <NewEventForm newEvent={newEvent}/>
       </Modal>}
       <br />
       <br />
